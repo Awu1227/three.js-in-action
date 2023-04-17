@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 import Experience from "../Experience.js";
 
-export default class Floor {
+export default class Line {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
@@ -36,14 +36,14 @@ export default class Floor {
   }
 
   setMesh() {
-    this.mesh = new THREE.Line(this.geometry, this.material);
-    this.mesh.position.y = 1;
-    this.mesh.rotation.x = -Math.PI * 0.5;
-    this.mesh.castShadow = true;
-    this.scene.add(this.mesh);
+    this.line = new THREE.Line(this.geometry, this.material);
+    this.line.position.y = 1;
+    this.line.rotation.x = -Math.PI * 0.5;
+    this.line.castShadow = true;
+    this.scene.add(this.line);
   }
   update() {
-    this.mesh.rotation.x += 0.01;
-    this.mesh.rotation.y += 0.01;
+    this.line.rotation.x += 0.01;
+    this.line.rotation.y += 0.01;
   }
 }

@@ -3,7 +3,7 @@ import * as THREE from "three";
 import Experience from "../Experience.js";
 import Environment from "./Environment.js";
 import Floor from "./Floor.js";
-import Box from "./Box";
+import Line from "./Line";
 
 export default class World {
   constructor() {
@@ -17,13 +17,13 @@ export default class World {
     this.resources.on("ready", () => {
       // Setup
       this.floor = new Floor();
-      this.box = new Box();
+      this.line = new Line();
       this.environment = new Environment();
     });
   }
 
   update() {
     if (this.fox) this.fox.update();
-    if (this.box) this.box.update();
+    if (this.line) this.line.update();
   }
 }
