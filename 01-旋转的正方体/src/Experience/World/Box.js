@@ -36,7 +36,7 @@ export default class Floor {
   }
 
   setMaterial() {
-    this.material = new THREE.MeshStandardMaterial({
+    this.material = new THREE.MeshPhongMaterial({
       map: this.textures.color,
       normalMap: this.textures.normal,
     });
