@@ -19,7 +19,7 @@ export default class Line {
     const vertices = new Float32Array([
       -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, 1.0, 1.0,
 
-      1.0, 1.0, 1.0, -1.0, -1.0, 1.0,
+      1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, -1.0, 1.0,
     ]);
 
     // itemSize = 3 因为每个顶点都是一个三元组。
@@ -40,6 +40,8 @@ export default class Line {
     this.line.position.y = 1;
     this.line.rotation.x = -Math.PI * 0.5;
     this.line.castShadow = true;
+    const helper = new THREE.AxesHelper(50);
+    this.scene.add(helper);
     this.scene.add(this.line);
   }
   update() {
